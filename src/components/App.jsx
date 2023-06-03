@@ -67,6 +67,7 @@ class App extends React.Component {
   };
 
   render() {
+    console.log('a', this.state.contacts);
     return (
       <div
         style={{
