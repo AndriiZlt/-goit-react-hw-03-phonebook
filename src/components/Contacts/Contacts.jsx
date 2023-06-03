@@ -5,6 +5,8 @@ import { Ul, Li, Btn } from './Contacts.styled';
 
 class ContactList extends React.Component {
   render() {
+    console.log(this.props.contacts);
+
     const filteredContacts = this.props.contacts.filter(contact =>
       contact.name.toLowerCase().includes(this.props.filter.toLowerCase())
     );
