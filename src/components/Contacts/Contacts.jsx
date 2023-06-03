@@ -4,7 +4,7 @@ import shortid from 'shortid';
 import { Ul, Li, Btn } from './Contacts.styled';
 
 const ContactList = ({ contacts, filter, deleteContact }) => {
-  console.log('s', contacts);
+  console.log('y', contacts);
   const filteredUsers = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
