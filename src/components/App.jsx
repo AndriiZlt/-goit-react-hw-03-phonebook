@@ -23,12 +23,6 @@ class App extends React.Component {
     }
   }
 
-  filterContacts = filter => {
-    return this.state.contacts.filter(contact =>
-      contact.name.toLowerCase().includes(filter.toLowerCase())
-    );
-  };
-
   addingNewContact = e => {
     const { name, number } = e.currentTarget;
     let isTaken = false;
@@ -93,7 +87,6 @@ class App extends React.Component {
           contacts={this.state.contacts}
           filter={this.state.filter}
           deleteContact={this.deleteContact}
-          filterContacts={this.filterContacts}
         />
       </div>
     );

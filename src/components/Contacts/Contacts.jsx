@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import shortid from 'shortid';
 import { Ul, Li, Btn } from './Contacts.styled';
 
-const ContactList = ({ contacts, filter, deleteContact, filterContacts }) => {
-  const filteredContacts = filterContacts(filter);
+const ContactList = ({ contacts, filter, deleteContact }) => {
+  const filteredContacts = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(filter.toLowerCase())
+  );
   console.log('g', filteredContacts);
   return (
     contacts.length > 0 && (
