@@ -7,7 +7,7 @@ const ContactList = ({ contacts, filter, deleteContact }) => {
   const filteredContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
-  console.log('gg', filteredContacts);
+  console.log('ggg', filteredContacts);
   return (
     this.props.contacts.length > 0 && (
       <>
