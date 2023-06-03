@@ -11,7 +11,6 @@ class App extends React.Component {
 
   componentDidMount() {
     const savedContacts = JSON.parse(localStorage.getItem('contacts')) || [];
-    console.log('r', savedContacts);
     this.setState({
       contacts: [...savedContacts],
     });

@@ -7,9 +7,8 @@ const ContactList = ({ contacts, filter, deleteContact }) => {
   const filteredContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
-  console.log('ggg', filteredContacts);
   return (
-    this.props.contacts.length > 0 && (
+    contacts.length > 0 && (
       <>
         <Ul>
           {filteredContacts.length > 0
@@ -17,11 +16,7 @@ const ContactList = ({ contacts, filter, deleteContact }) => {
                 <Li key={shortid.generate()}>
                   {name} {number}
                   {
-                    <Btn
-                      type="button"
-                      id={name}
-                      onClick={this.props.deleteContact}
-                    >
+                    <Btn type="button" id={name} onClick={deleteContact}>
                       Delete
                     </Btn>
                   }
