@@ -5,7 +5,7 @@ import { Ul, Li, Btn } from './Contacts.styled';
 
 const ContactList = ({ contacts, filter, deleteContact, filterContacts }) => {
   const filteredContacts = filterContacts(filter);
-  console.log('y', filteredContacts);
+  console.log('g', filteredContacts);
   return (
     contacts.length > 0 && (
       <>
