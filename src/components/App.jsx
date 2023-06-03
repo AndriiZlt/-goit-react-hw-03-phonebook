@@ -11,8 +11,9 @@ class App extends React.Component {
 
   componentDidMount() {
     const savedContacts = JSON.parse(localStorage.getItem('contacts'));
+    console.log('r', savedContacts);
     this.setState({
-      contacts: [...savedContacts],
+      contacts: savedContacts,
     });
   }
 
@@ -21,6 +22,12 @@ class App extends React.Component {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
   }
+
+  filterContacts = filter => {
+    return this.state.contacts.filter(contact =>
+      contact.name.toLowerCase().includes(filter.toLowerCase())
+    );
+  };
 
   addingNewContact = e => {
     const { name, number } = e.currentTarget;
@@ -86,6 +93,7 @@ class App extends React.Component {
           contacts={this.state.contacts}
           filter={this.state.filter}
           deleteContact={this.deleteContact}
+          filterContacts={this.filterContacts}
         />
       </div>
     );

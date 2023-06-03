@@ -3,18 +3,15 @@ import PropTypes from 'prop-types';
 import shortid from 'shortid';
 import { Ul, Li, Btn } from './Contacts.styled';
 
-const ContactList = ({ contacts, filter, deleteContact }) => {
-  console.log('y', contacts);
-  const filteredUsers = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
-  );
-
+const ContactList = ({ contacts, filter, deleteContact, filterContacts }) => {
+  const filteredContacts = filterContacts(filter);
+  console.log('y', filteredContacts);
   return (
     contacts.length > 0 && (
       <>
         <Ul>
-          {filteredUsers.length > 0
-            ? filteredUsers.map(({ name, number }) => (
+          {filteredContacts.length > 0
+            ? filteredContacts.map(({ name, number }) => (
                 <Li key={shortid.generate()}>
                   {name} {number}
                   {
