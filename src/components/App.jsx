@@ -12,7 +12,7 @@ class App extends React.Component {
   componentDidMount() {
     const savedContacts = JSON.parse(localStorage.getItem('contacts'));
     this.setState({
-      contacts: savedContacts,
+      contacts: [...savedContacts],
     });
   }
 
