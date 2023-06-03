@@ -4,9 +4,10 @@ import shortid from 'shortid';
 import { Ul, Li, Btn } from './Contacts.styled';
 
 const ContactList = ({ contacts, filter, deleteContact }) => {
-  const filteredUsers = contacts.filter(contact => {
-    return contact.name.toLowerCase().includes(filter.toLowerCase());
-  });
+  console.log('s', contacts);
+  const filteredUsers = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(filter.toLowerCase())
+  );
 
   return (
     contacts.length > 0 && (
